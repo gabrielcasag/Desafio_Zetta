@@ -1,4 +1,4 @@
-package com.projetoZetta.um.controller;
+package com.projetoZetta.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

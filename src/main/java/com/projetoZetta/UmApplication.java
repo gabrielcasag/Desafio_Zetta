@@ -1,4 +1,4 @@
-package com.projetoZetta.um;
+package com.projetoZetta;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

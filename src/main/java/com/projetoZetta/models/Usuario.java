@@ -1,4 +1,4 @@
-package com.projetoZetta.um.models;
+package com.projetoZetta.models;
 
 import java.io.Serializable;
 
@@ -15,6 +15,12 @@ public class Usuario implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+
+	private String nome;
+	private String cpf;
+	private String sexo;
+	private String dataNascimento;
+	
 	
 	public long getId() {
 		return id;
@@ -23,11 +29,6 @@ public class Usuario implements Serializable{
 	public void setId(long id) {
 		this.id = id;
 	}
-
-	private String nome;
-	private String cpf;
-	private char sexo;
-	private String dataNascimento;
 	
 	public String getNome() {
 		return nome;
@@ -45,11 +46,11 @@ public class Usuario implements Serializable{
 		this.cpf = cpf;
 	}
 	
-	public char getSexo() {
+	public String getSexo() {
 		return sexo;
 	}
 	
-	public void setSexo(char sexo) {
+	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
 	
