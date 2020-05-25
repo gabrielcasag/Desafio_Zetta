@@ -23,9 +23,7 @@ public class UsuarioController {
 	
 	@RequestMapping(value="/cadastrarUsuario", method=RequestMethod.POST)
 	public String form(Usuario usuario) {
-		
 		repo.save(usuario);
-		
 		return "redirect:/cadastrarUsuario";
 	}
 }
