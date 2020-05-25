@@ -1,25 +1,22 @@
 package com.projetoZetta.models;
 
-import java.io.Serializable;
+import java.util.List;
 import javax.persistence.*;
 
 @Entity
 @Table(schema="usermanager" , name="usuario")
-public class Usuario extends Pessoa implements Serializable{
-	
-	private static final long serialVersionUID = 1L;
+public class Usuario extends Pessoa {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
+	@ManyToOne
+	private Cargo cargo;
 	
-	private String nome;
-	private String cpf;
-	private String sexo;
-	private String dataNascimento;
-	
-	
+	@ManyToMany
+	private List<Perfil> perifs;
+
 	public long getId() {
 		return id;
 	}
@@ -27,38 +24,24 @@ public class Usuario extends Pessoa implements Serializable{
 	public void setId(long id) {
 		this.id = id;
 	}
-	
-	public String getNome() {
-		return nome;
+
+	public Cargo getCargo() {
+		return cargo;
+	}
+
+	public void setCargo(Cargo cargo) {
+		this.cargo = cargo;
+	}
+
+	public List<Perfil> getPerifs() {
+		return perifs;
+	}
+
+	public void setPerifs(List<Perfil> perifs) {
+		this.perifs = perifs;
 	}
 	
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
-	public String getCpf() {
-		return cpf;
-	}
-	
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-	
-	public String getSexo() {
-		return sexo;
-	}
-	
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
-	}
-	
-	public String getDataNascimento() {
-		return dataNascimento;
-	}
-	
-	public void setDataNascimento(String dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
 	
 	
 }
+	
