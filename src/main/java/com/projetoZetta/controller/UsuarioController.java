@@ -1,49 +1,38 @@
 package com.projetoZetta.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import com.projetoZetta.dto.MessageResponseDTO;
+import org.springframework.web.bind.annotation.RequestMethod;
 import com.projetoZetta.model.Usuario;
-import com.projetoZetta.service.UsuarioService;
+import com.projetoZetta.repository.UsuarioRepository;
 
-
-@RestController
-@RequestMapping("/api/v1/usuarios")
+@Controller
+@RequestMapping("/usuario")
 public class UsuarioController {
-	
-	private UsuarioService usuarioService;
-	
-	@Autowired
-	public UsuarioController(UsuarioService usuarioService) {
-		this.usuarioService = usuarioService;
-	}
 
-	@PostMapping
-	public MessageResponseDTO create(@RequestBody Usuario umUsuario) {
-		return usuarioService.create(umUsuario);
-	}
-	
-	
-	
-	
-	
-	
-	
-	/*
+	private UsuarioRepository usuarioRepository;
+
 	@Autowired
-	private UsuarioRepository repo;
-	
-	@RequestMapping(value="/cadastrarUsuario", method=RequestMethod.GET)
-	public String form() {	
-		return "/usuario/formUsuario";
+	public UsuarioController(UsuarioRepository usuarioRepository) {
+		this.usuarioRepository = usuarioRepository;
 	}
 	
-	@RequestMapping(value="/cadastrarUsuario", method=RequestMethod.POST)
-	public String form(Usuario usuario) {
-		repo.save(usuario);
-		return "redirect:/cadastrarUsuario";
-	}*/
+	@RequestMapping(value="/usuario/cadastrar" , method=RequestMethod.POST)
+	public Usuario novoUsuario(@RequestBody Usuario umUsuario) {
+		return usuarioRepository.save(umUsuario);
+	}
+	
+	@RequestMapping(value="/usuario/listar")
+	public List<Usuario> listarUsuarios() {
+		return usuarioRepository.findAll();
+	}
+	
+	@RequestMapping(value="/usuario/excluir" , method=RequestMethod.DELETE)
+	public void excluirUsuario(@RequestBody Usuario umUsuario) {
+		usuarioRepository.delete(umUsuario);
+	}
 }

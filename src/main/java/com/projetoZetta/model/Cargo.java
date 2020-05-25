@@ -11,7 +11,7 @@ public class Cargo {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long id;
 
-	@Column(name="nome")
+	@Column(name="nome" , nullable=false , unique=true)
 	private String nome;
 	
     public Cargo() {

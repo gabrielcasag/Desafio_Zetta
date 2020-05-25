@@ -11,22 +11,20 @@ public abstract class Pessoa {
 	@Column(name="id")
 	private long id;
 	
-	@Column(name="nome")
+	@Column(name="nome" , nullable=false)
 	private String nome;
 	
-	@Column(name="cpf")
+	@Column(name="cpf" , nullable=false , unique=true)
 	private String cpf;
 	
-	@Column(name="data_nascimento1")
+	@Column(name="data_nascimento" , nullable=false)
 	private String data_nascimento;
 	
-	@Column(name="sexo")
+	@Column(name="sexo" , nullable=false)
 	private String sexo;
 	
 
-	public Pessoa()
-	{
-		
+	public Pessoa() {
 	}
 	
 	public Pessoa(String nome, String cpf, String data_nascimento, String sexo) {
@@ -37,47 +35,36 @@ public abstract class Pessoa {
 		this.sexo = sexo;
 	}
 
-
 	public String getNome() {
 		return nome;
 	}
-
 
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-
 	public String getCpf() {
 		return cpf;
 	}
-
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 
-
 	public String getData_nascimento() {
 		return data_nascimento;
 	}
-
 
 	public void setData_nascimento(String data_nascimento) {
 		this.data_nascimento = data_nascimento;
 	}
 
-
 	public String getSexo() {
 		return sexo;
 	}
-
 
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
 	
-	
-	
-
 }
