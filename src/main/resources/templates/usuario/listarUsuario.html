@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <link rel="stylesheet" href="CSS/baseform.css">
+    <meta charset="utf-8">
+	<title> Zetta Manager </title>
+</head>
+
+<center>
+<body>
+	<div class="frame">
+	<table>
+	    <thead>
+	        <tr>
+	            <th> Nome </th>
+	            <th> ID </th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	    <tr th:if="${usuario.empty}">
+	            <td colspan="2"> Nenhum usuario cadastrado </td>
+	        </tr>
+	        <tr th:each="usuario : ${usuario}">
+	            <td><span th:text="${usuario.nome}"> Nome </span></td>
+	            <td><span th:text="${usuario.id}"> ID </span></td>
+	        </tr>
+	    </tbody>
+	</table>
+	</div>
+</body>
+</center>
+
+</html>

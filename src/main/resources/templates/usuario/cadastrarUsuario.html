@@ -2,10 +2,15 @@
 <html xmlns:th="http://thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
+    <link rel="stylesheet" href="CSS/baseform.css">
+    <meta charset="utf-8">
 	<title> User Manager </title>
 </head>
+<center>
 <body>
+	
 	<h1>Cadastro de Usuarios</h1>
+	<div class="frame">
 	<form method="POST">
 		Nome: <input type="text" value="" name="nome">
 		CPF: <input type="text" value="" name="cpf">
@@ -13,10 +18,9 @@
 		Data de nascimento: <input type="date" value="" name="data_nascimento">
 		
 		<button type="submit">Cadastrar</button>
-	
+	</div>
 	</form>
-
+	
 </body>
-
-
+</center>
 </html>
