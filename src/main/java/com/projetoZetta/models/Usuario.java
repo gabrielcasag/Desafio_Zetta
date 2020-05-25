@@ -11,11 +11,12 @@ public class Usuario extends Pessoa {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="cargo_id")
 	private Cargo cargo;
 	
 	@ManyToMany
-	private List<Perfil> perifs;
+	private List<Perfil> perfis;
 
 	public long getId() {
 		return id;
@@ -33,12 +34,12 @@ public class Usuario extends Pessoa {
 		this.cargo = cargo;
 	}
 
-	public List<Perfil> getPerifs() {
-		return perifs;
+	public List<Perfil> getPerfis() {
+		return perfis;
 	}
 
-	public void setPerifs(List<Perfil> perifs) {
-		this.perifs = perifs;
+	public void setPerfil(List<Perfil> perfis) {
+		this.perfis = perfis;
 	}
 	
 	
