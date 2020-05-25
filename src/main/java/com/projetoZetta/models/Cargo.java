@@ -17,7 +17,7 @@ public class Cargo {
     public Cargo() {
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
