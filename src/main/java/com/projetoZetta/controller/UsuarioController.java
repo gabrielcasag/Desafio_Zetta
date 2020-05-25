@@ -1,32 +1,29 @@
 package com.projetoZetta.controller;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.projetoZetta.dto.MessageResponseDTO;
-import com.projetoZetta.models.Usuario;
-import com.projetoZetta.repository.UsuarioRepository;
+import com.projetoZetta.model.Usuario;
+import com.projetoZetta.service.UsuarioService;
+
 
 @RestController
 @RequestMapping("/api/v1/usuarios")
 public class UsuarioController {
 	
-	private UsuarioRepository repo;
+	private UsuarioService usuarioService;
 	
 	@Autowired
-	public UsuarioController(UsuarioRepository repo){
-		this.repo = repo;
+	public UsuarioController(UsuarioService usuarioService) {
+		this.usuarioService = usuarioService;
 	}
 
 	@PostMapping
-	public MessageResponseDTO create(@RequestBody Usuario usuario) {
-		Usuario usuarioSalvo = repo.save(usuario);
-		return MessageResponseDTO.builder().message("Usuario criado com ID:" + usuarioSalvo.getId()).build();
+	public MessageResponseDTO create(@RequestBody Usuario umUsuario) {
+		return usuarioService.create(umUsuario);
 	}
 	
 	

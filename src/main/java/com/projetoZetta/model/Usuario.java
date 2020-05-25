@@ -1,4 +1,4 @@
-package com.projetoZetta.models;
+package com.projetoZetta.model;
 
 import java.util.List;
 import javax.persistence.*;
