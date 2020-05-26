@@ -20,6 +20,6 @@
 #### Para executar:
 - Primeiro criar o database que será usado. No terminal : $ sudo mysql -u root -p ;
 - Digite a senha do root e acessará o mysql server ;
-- Crie o database de nome "usermanager" com o comando : create database usermanager;
+- Crie o database de nome "usermanager"(user: root, senha:admin) com o comando : create database usermanager;
 - Abra o projeto com a IDE preferida e execute a classe : UmAplication.java
 - Acesse pelo navegador no endereço : http://localhost:8080/
