@@ -1,5 +1,5 @@
 # Desafio_Zetta
-Repositorio destinado ao Desafio Prático do PS Zetta 2020
+  Repositorio destinado ao Desafio Prático do PS Zetta 2020
 
 # Tecnologias utilizadas:
 - Java (backend)
@@ -13,6 +13,6 @@ Repositorio destinado ao Desafio Prático do PS Zetta 2020
 - Spring Data JPA
 - Thymeleaf
 
-#IDEs utilizadas:
+# IDEs utilizadas:
 - Eclipse 
 - MYSQL Workbench
